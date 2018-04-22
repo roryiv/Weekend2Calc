@@ -24,6 +24,7 @@ $(document).ready(function () {
     $('.operation').on('click', operationHandler);
     $('#clear').on('click', clear);
     $('#deleteHistoryButton').on('click', byeHistory);
+    $('#calculationHistory').on('click', '.calc', reCalculate);
 });
 
 function calculate() {
@@ -58,6 +59,19 @@ function calculate() {
     //reset the object for next calculation
     toCalc.reset();
     opSelected = false;
+}
+
+function reCalculate() {
+    //get the calculation that was clicked and parse it
+    let data = $(this).text().split(' ');
+
+    //package data into a Calculation object with our recycled variable name
+    toCalc.x = data[0];
+    toCalc.op = data[1];
+    toCalc.y = data[2];
+
+    //calculate it as usual
+    calculate();
 }
 
 function refreshHistory() {
