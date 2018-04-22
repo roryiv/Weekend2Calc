@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+    background-color: #efefef;
+    color: crimson;
+}
+
+ul {
+    /* list-style-type: none; */
+    font-size: larger;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+#buttonsDiv {
+    padding-left: 150px;
+}
+
+#historyDiv {
+    padding-right: 150px;
+}
+
+button {
+    background-color: #4CAF50;
+    margin: 10px;
+    color: white;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#calculationData {
+    margin: 50px 245px 25px auto;
+    width: 400px;
+    height: 40px;
+    background-color: #9da59b;
+    color: royalblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    text-align: right;
+}
