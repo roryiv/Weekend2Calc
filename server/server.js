@@ -13,7 +13,7 @@ let currentRequest;
 
 app.post('/calculate', (req, res) => {
     currentRequest = req.body;
-    history.push(req.body);
+    history.push(currentRequest);
     res.sendStatus(200);
 });
 
@@ -23,6 +23,13 @@ app.get('/solution', (req, res) => {
 
 app.get('/history', (req, res) => {
     res.send(history);
+});
+
+app.delete('/history', (req, res) => {
+    while (history.length > 0) {
+        history.pop();
+    }
+    res.sendStatus(200);
 });
 
 app.listen(PORT, () => {

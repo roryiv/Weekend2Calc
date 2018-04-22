@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: #efefef;
-    color: crimson;
+    color: royalblue;
 }
 
 ul {
@@ -40,12 +40,19 @@ button {
     font-size: 16px;
 }
 
+#deleteHistoryButton {
+    background-color: crimson;
+    width: 120px;
+    height: 30px;
+    float: right;
+}
+
 #calculationData {
     margin: 50px 245px 25px auto;
     width: 400px;
     height: 40px;
     background-color: #9da59b;
-    color: royalblue;
+    color: darkslategrey;
     font-family: 'Courier New', Courier, monospace;
     font-size: xx-large;
     text-align: right;
