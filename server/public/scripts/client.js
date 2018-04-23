@@ -15,6 +15,8 @@ class Calculation {
 let toCalc = new Calculation();
 //initialize a boolean to switch between writing to x and writing to y
 let opSelected = false;
+//initialize a variable to keep track of the answer that's on the display
+let displayAns = '0';
 
 $(document).ready(function () {
     toCalc.reset();
@@ -29,9 +31,6 @@ $(document).ready(function () {
 
 function calculate() {
     //check for weird inputs
-    if (toCalc.x == '') {
-        toCalc.x = 0;
-    }
     if (toCalc.y == '' && toCalc.op != '=') {
         toCalc.y = 0;
     }
@@ -53,7 +52,8 @@ function calculate() {
         url: '/solution'
     })
     .then(function (response) {
-        updateCalcDisplay(response);
+        displayAns = response;
+        updateCalcDisplay(displayAns);
     });
 
     //reset the object for next calculation
@@ -114,9 +114,14 @@ function numberHandler() {
 }
 
 function operationHandler() {
-    //store information about which operation the user has selected and update DOM
+    //store information about which operation the user has selected
     toCalc.op = $(this).attr('id');
     opSelected = true;
+    //check to see if the user is trying to use the previous answer as their "x"
+    if (toCalc.x == '') {
+        toCalc.x = displayAns;
+    }
+    //update DOM
     updateCalcDisplay(`${toCalc.x} ${toCalc.op}`);
 }
 
