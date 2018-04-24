@@ -18,7 +18,7 @@ app.post('/calculate', (req, res) => {
 });
 
 app.get('/solution', (req, res) => {
-    res.send(calculate(currentRequest));
+    res.send(calculate(currentRequest).toString());
 });
 
 app.get('/history', (req, res) => {

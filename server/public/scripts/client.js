@@ -31,7 +31,11 @@ $(document).ready(function () {
 
 function calculate() {
     //check for weird inputs
-    if (toCalc.y == '' && toCalc.op != '=') {
+    if (toCalc.op == '!') {
+        //ignore any input after the ! operator
+        toCalc.y = ''; 
+    }
+    else if (toCalc.y == '' && toCalc.op != '=') {
         toCalc.y = 0;
     }
 
@@ -120,6 +124,9 @@ function operationHandler() {
     //check to see if the user is trying to use the previous answer as their "x"
     if (toCalc.x == '') {
         toCalc.x = displayAns;
+    }
+    if (toCalc.op == '√') {
+        toCalc.x = '';
     }
     //update DOM
     updateCalcDisplay(`${toCalc.x} ${toCalc.op}`);
