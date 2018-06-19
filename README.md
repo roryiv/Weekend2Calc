@@ -5,7 +5,7 @@ A simple yet elegant take on the classic application, with basic arithmetic oper
 
 ## Built With
 
-jQuery, NodeJS, ExpressJS
+jQuery, NodeJS, Express
 
 ## Getting Started
 
